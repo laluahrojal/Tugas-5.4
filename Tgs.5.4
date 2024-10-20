@@ -1,0 +1,29 @@
+from datetime import datetime
+
+def hitung_semester(tahun_masuk):
+    tahun_saat_ini = datetime.now().year
+    bulan_saat_ini = datetime.now().month
+
+    selisih_tahun = tahun_saat_ini - tahun_masuk
+
+    if bulan_saat_ini <= 6:
+        semester = (selisih_tahun * 2) + 2
+    else:
+        semester = (selisih_tahun * 2) + 1
+
+    return semester
+
+# Loop menggunakan while untuk meminta input hingga input valid diberikan
+while True:
+    try:
+        tahun_masuk = int(input("Masukkan tahun masuk mahasiswa (contoh: 2021): "))
+        if tahun_masuk <= 0:
+            print("Tahun masuk tidak boleh negatif atau nol. Coba lagi.")
+            continue  # Kembali ke awal loop
+        break  # Keluar dari loop jika input valid
+    except ValueError:
+        print("Input tidak valid. Masukkan angka tahun dengan benar.")
+
+# Menghitung semester dan menampilkan hasil
+semester = hitung_semester(tahun_masuk)
+print(f"Mahasiswa berada di semester {semester}.")

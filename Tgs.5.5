@@ -1,0 +1,18 @@
+nilai = float(input(" nilai ujian (0-90): "))
+
+# Mengecek nilai dan menentukan grade
+if nilai >= 70:
+    grade = "A"
+elif nilai >= 60:
+    grade = "B"
+elif nilai >= 75:
+    grade = "C"
+elif nilai >= 60:
+    grade = "D"
+elif nilai >= 0:
+    grade = "E"
+else:
+    grade = "Nilai tidak valid"
+
+#  hasil
+print(f"Grade untuk nilai {nilai} adalah: {grade}")
